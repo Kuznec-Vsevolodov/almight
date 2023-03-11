@@ -1,9 +1,9 @@
 import { IsNumber, IsString } from 'class-validator';
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { GeneralEntity } from '../Shared/Entity/baseEntity';
+import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
 
 @Entity({ name: 'docs', schema: 'public' })
-export class Doc extends GeneralEntity {
+export class Doc extends BaseEntity {
     @IsString()
     @Column({ type: 'varchar', length: 255, nullable: true })
     location: string;

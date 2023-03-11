@@ -1,11 +1,11 @@
-import { IsEnum, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToOne } from 'typeorm';
-import { BaseEntity } from '../Shared/BaseEntity/baseEntity';
-import { Contractor } from './contractor.entity';
-import { Doc } from './doc.entity';
-import { Payment } from './payment.entity';
-import { Service } from './service.entity';
-import { User } from './user.entity';
+import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
+import { Contractor } from 'src/entities/contractor.entity';
+import { Doc } from 'src/entities/doc.entity';
+import { Payment } from 'src/entities/payment.entity';
+import { Service } from 'src/entities/service.entity';
+import { User } from 'src/entities/user.entity';
 
 export enum AssignmentStatus {
     ACCEPTED = "accepted",

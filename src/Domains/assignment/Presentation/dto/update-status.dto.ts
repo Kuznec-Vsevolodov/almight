@@ -1,6 +1,6 @@
 import { IsNumber } from 'class-validator';
 
-export class AddToAlbumDto {
+export class UpdateStatusDto {
     @IsNumber()
-    album: number;
+    status: number;
 }
