@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { useContainer } from 'typeorm';
-import { AppModule } from './app.module';
+import { AppModule } from './App/app.module';
 import { ConfigService } from '@nestjs/config';
 import { config } from 'aws-sdk'
 
