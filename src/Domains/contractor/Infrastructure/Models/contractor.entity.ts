@@ -1,11 +1,11 @@
 import { IsEmail, IsNumber, IsString, Min, MinLength } from 'class-validator';
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, OneToOne } from 'typeorm';
-import { BaseEntity } from '../Shared/BaseEntity/baseEntity';
-import { Assignment } from './assignment.entity';
-import { Photo } from './photo.entity';
-import { Rating } from './rating.entity';
-import { Service } from './service.entity';
-import { User } from './user.entity';
+import { BaseEntity } from '../../../../Shared/BaseEntity/baseEntity';
+import { Assignment } from 'src/Domains/assignment/Infrastructure/Models/assignment.entity'; 
+import { Photo } from '../../../../entities/photo.entity';
+import { Rating } from '../../../../entities/rating.entity';
+import { Service } from '../../../../entities/service.entity';
+import { User } from '../../../../entities/user.entity';
 
 @Entity({ name: 'contractors', schema: 'public' })
 export class Contractor extends BaseEntity {
@@ -13,7 +13,7 @@ export class Contractor extends BaseEntity {
         cascade: true
     })
     @JoinColumn({ name: 'user_id' })
-    user?: User;
+    user: User;
 
     @IsString()
     @Column({ type: 'varchar', length: 50, nullable: false })

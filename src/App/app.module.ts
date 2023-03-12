@@ -6,13 +6,13 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { PhotoModule } from './photo/photo.module';
 import { FileModule } from './file/file.module';
-import { PostModule } from './post/post.module';
+import { AssignmentModule } from 'src/Domains/assignment/Business/assignment.module';
 import { CourseModule } from './course/course.module';
-import { MarathonModule } from './marathon/marathon.module';
+import { ContractorModule } from 'src/Domains/contractor/Business/marathon.module';
 import { CategoryModule } from './category/category.module';
 import { TagModule } from './tag/tag.module';
 import { AuthModule } from './auth/auth.module';
-import dbConfiguration from "./configs/orm.config";
+import dbConfiguration from "../configs/orm.config";
 
 @Module({
   imports: [
@@ -30,9 +30,9 @@ import dbConfiguration from "./configs/orm.config";
     UserModule,
     PhotoModule,
     FileModule,
-    PostModule,
+    AssignmentModule,
     CourseModule,
-    MarathonModule,
+    ContractorModule,
     CategoryModule,
     TagModule,
     AuthModule

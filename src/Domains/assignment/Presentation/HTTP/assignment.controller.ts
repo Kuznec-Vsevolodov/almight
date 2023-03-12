@@ -8,7 +8,7 @@ import { UpdateStatusDto } from '../dto/update-status.dto';
 export class AssignmentController {
     constructor(private readonly assignmentService: AssignmentService) { }
 
-    @Post('/create')
+    @Post('/')
     @UseInterceptors(FileFieldsInterceptor([
         { name: 'docs', maxCount: 10 },
     ]))

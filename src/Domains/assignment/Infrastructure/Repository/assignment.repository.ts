@@ -31,8 +31,8 @@ export class AssignmentRepository{
             .leftJoinAndSelect('assignments.client', 'users')
             .leftJoinAndSelect('assignments.contractor', 'contractor')
             .leftJoinAndSelect('assignments.docs', 'docs')
-            .select(['posts', 'users', 'docs', 'contractors'])
-            .where('posts.id = :id', { id })
+            .select(['assignments', 'users', 'docs', 'contractors'])
+            .where('assignments.id = :id', { id })
             .getOne();
     }
 
