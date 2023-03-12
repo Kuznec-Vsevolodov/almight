@@ -1,7 +1,7 @@
-import { Service } from 'src/entities/service.entity';
+import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
 import { IsNumber, IsString } from 'class-validator';
 import { User } from 'src/entities/user.entity';
-import { Photo } from 'src/entities/photo.entity';
+import { Photo } from 'src/Domains/photo/Infrastructure/Models/photo.entity';
 
 export class ContractorDto {
     
@@ -11,7 +11,7 @@ export class ContractorDto {
     name: string;
 
     @IsString()
-    assress: string;
+    address: string;
 
     @IsString()
     email: string;

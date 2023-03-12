@@ -1,9 +1,9 @@
 import { IsEmail, IsString, MinLength } from 'class-validator';
 import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm';
 import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
-import { Service } from './Service.entity';
+import { Service } from '../Domains/service/Infrastructure/Models/service.entity';
 import { Assignment } from './assignment.entity';
-import { Contractor } from './contractor.entity';
+import { Contractor } from '../Domains/contractor/Infrastructure/Models/contractor.entity';
 import { Rating } from './rating.entity';
 
 export enum UserRole {

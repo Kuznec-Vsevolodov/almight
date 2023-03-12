@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { FileService, FileType } from 'src/Domains/file/file.service';
-import { Service } from 'src/entities/service.entity';
+import { FileService, FileType } from 'src/Domains/file/Busines/file.service';
+import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
 import { User } from 'src/entities/user.entity';
 import { ContractorDto } from '../Dto/contractor.dto';
 import { CreateContractorDto } from '../../Presentation/dto/create-contractor.dto';
 import { ContractorRepository } from '../../Infrastructure/Repository/contractor.repository';
-import { Photo } from 'src/entities/photo.entity';
+import { Photo } from 'src/Domains/photo/Infrastructure/Models/photo.entity';
 
 @Injectable()
 export class ContractorWriter {
