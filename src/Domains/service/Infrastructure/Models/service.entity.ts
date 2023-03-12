@@ -6,7 +6,7 @@ import { Assignment } from 'src/Domains/assignment/Infrastructure/Models/assignm
 import { ServiceCategory } from './service_category.entity';
 import { ServiceTag } from './Service_tag.entity';
 import { Contractor } from '../../../contractor/Infrastructure/Models/contractor.entity';
-import { User } from '../../../../entities/user.entity';
+import { User } from '../../../user/Infrastructure/Models/user.entity';
 
 @Entity({ name: 'services', schema: 'public' })
 export class Service extends BaseEntity {

@@ -4,7 +4,7 @@ import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
 import { Service } from '../../../service/Infrastructure/Models/service.entity';
 import { Assignment } from 'src/Domains/assignment/Infrastructure/Models/assignment.entity';
 import { Contractor } from '../../../contractor/Infrastructure/Models/contractor.entity';
-import { Rating } from '../../../../entities/rating.entity';
+import { Rating } from '../../../rating/Infrastructure/Models/rating.entity';
 
 export enum UserRole {
     CLIENT = "client",

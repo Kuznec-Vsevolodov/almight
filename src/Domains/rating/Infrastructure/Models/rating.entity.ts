@@ -1,8 +1,8 @@
 import { IsNumber, IsString } from 'class-validator';
 import { Column, Entity, JoinColumn, ManyToOne} from 'typeorm';
-import { BaseEntity } from '../Shared/BaseEntity/baseEntity';
-import { Contractor } from '../Domains/contractor/Infrastructure/Models/contractor.entity';
-import { User } from './user.entity';
+import { BaseEntity } from '../../../../Shared/BaseEntity/baseEntity';
+import { Contractor } from '../../../contractor/Infrastructure/Models/contractor.entity';
+import { User } from '../../../user/Infrastructure/Models/user.entity';
 
 
 @Entity({ name: 'assignments', schema: 'public' })

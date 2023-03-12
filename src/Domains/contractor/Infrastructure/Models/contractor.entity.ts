@@ -3,9 +3,9 @@ import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany
 import { BaseEntity } from '../../../../Shared/BaseEntity/baseEntity';
 import { Assignment } from 'src/Domains/assignment/Infrastructure/Models/assignment.entity'; 
 import { Photo } from '../../../photo/Infrastructure/Models/photo.entity';
-import { Rating } from '../../../../entities/rating.entity';
+import { Rating } from '../../../rating/Infrastructure/Models/rating.entity';
 import { Service } from '../../../service/Infrastructure/Models/service.entity';
-import { User } from '../../../../entities/user.entity';
+import { User } from '../../../user/Infrastructure/Models/user.entity';
 
 @Entity({ name: 'contractors', schema: 'public' })
 export class Contractor extends BaseEntity {

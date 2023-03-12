@@ -1,6 +1,6 @@
 import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
 import { IsNumber, IsString } from 'class-validator';
-import { User } from 'src/entities/user.entity';
+import { User } from 'src/Domains/user/Infrastructure/Models/user.entity';
 import { Photo } from 'src/Domains/photo/Infrastructure/Models/photo.entity';
 
 export class ContractorDto {

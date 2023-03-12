@@ -1,9 +1,9 @@
-import { Service } from 'src/entities/service.entity';
+import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
 import { IsBoolean, IsNumber, IsString } from 'class-validator';
-import { Contractor } from 'src/entities/contractor.entity';
-import { User } from 'src/entities/user.entity';
+import { Contractor } from 'src/Domains/contractor/Infrastructure/Models/contractor.entity';
+import { User } from 'src/Domains/user/Infrastructure/Models/user.entity';
 import { AssignmentStatus } from '../../Infrastructure/Models/assignment.entity';
-import { Doc } from 'src/entities/doc.entity';
+import { Doc } from 'src/Domains/assignment/Infrastructure/Models/doc.entity';
 
 export class AssignmentDto {
     
