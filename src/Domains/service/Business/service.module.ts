@@ -9,4 +9,4 @@ import { ServiceService } from './service.service';
   controllers: [ServiceController],
   providers: [ServiceService, FileService, PhotoService, TagService]
 })
-export class CourseModule { }
+export class ServiceModule { }

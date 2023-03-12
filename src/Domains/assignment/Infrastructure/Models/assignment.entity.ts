@@ -1,11 +1,10 @@
 import { IsNumber, IsString } from 'class-validator';
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToOne } from 'typeorm';
 import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
-import { Contractor } from 'src/entities/contractor.entity';
-import { Doc } from 'src/entities/doc.entity';
-import { Payment } from 'src/entities/payment.entity';
-import { Service } from 'src/entities/service.entity';
-import { User } from 'src/entities/user.entity';
+import { Contractor } from 'src/Domains/contractor/Infrastructure/Models/contractor.entity';
+import { Doc } from 'src/Domains/assignment/Infrastructure/Models/doc.entity';
+import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
+import { User } from 'src/Domains/user/Infrastructure/Models/user.entity';
 
 export enum AssignmentStatus {
     ACCEPTED = "accepted",
@@ -62,7 +61,4 @@ export class Assignment extends BaseEntity {
     @ManyToMany(() => Doc)
     @JoinTable({ name: "assignment_docs" })
     docs?: Doc[];
-
-    @OneToOne(() => Payment, (payment) => payment.assignment)
-    payment: Payment;
 }

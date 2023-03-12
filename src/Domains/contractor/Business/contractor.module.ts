@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
-import { FileService } from '../../file/file.service';
-import { PhotoService } from '../../photo/photo.service';
-import { TagService } from '../../tag/tag.service';
+import { FileService } from '../../file/Busines/file.service';
+import { PhotoService } from '../../photo/Busines/photo.service';
 import { ContractorController } from '../Presentation/HTTP/marathon.controller';
 import { ContractorService } from './contractor.service';
 

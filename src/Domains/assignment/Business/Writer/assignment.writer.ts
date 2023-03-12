@@ -1,29 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { FileService, FileType } from 'src/Domains/file/file.service';
+import { FileService, FileType } from 'src/Domains/file/Busines/file.service';
 import { CreateAssignmentDto } from '../../Presentation/dto/create-assignment.dto';
 import { AssignmentDto } from '../Dto/assignment.dto';
-import { Service } from 'src/entities/service.entity';
+import { Service } from 'src/Domains/service/Infrastructure/Models/service.entity';
 import { AssignmentStatus } from '../../Infrastructure/Models/assignment.entity';
 import { AssignmentRepository } from '../../Infrastructure/Repository/assignment.repository';
-import { Contractor } from 'src/entities/contractor.entity';
-import { User } from 'src/entities/user.entity';
-import { Doc } from 'src/entities/doc.entity';
+import { Doc } from 'src/Domains/assignment/Infrastructure/Models/doc.entity';
 import { UpdateStatusDto } from '../../Presentation/dto/update-status.dto';
+import { ContractorService } from 'src/Domains/contractor/Business/contractor.service';
+import { UserService } from 'src/Domains/user/Business/user.service';
+import { ServiceService } from 'src/Domains/service/Business/service.service';
 
 @Injectable()
 export class AssignmentWriter {
 
     constructor(
         private fileService: FileService,
-        private assignmentRepository: AssignmentRepository
+        private assignmentRepository: AssignmentRepository,
+        private contractorService: ContractorService,
+        private userService: UserService,
+        private serviceService: ServiceService,
     ) { }
 
     public async create(presentationDto: CreateAssignmentDto, docs) {
         const assignment = new AssignmentDto();
 
-        assignment.client = await User.findOne({ where: { id: presentationDto.client } });
-        assignment.contractor = await Contractor.findOne({ where: { id: presentationDto.contractor } });
-        assignment.service = await Service.findOne({where: { id: presentationDto.service }})
+        assignment.client = await this.userService.getById(presentationDto.client)
+        assignment.contractor = await this.contractorService.getById(presentationDto.contractor)
+        assignment.service = await this.serviceService.getById(presentationDto.service)
         assignment.description = presentationDto.description;
         assignment.location_latitude = presentationDto.location_latitude;
         assignment.location_longitude = presentationDto.location_longitude;

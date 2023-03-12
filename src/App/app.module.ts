@@ -3,15 +3,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
+import { UserModule } from 'src/Domains/user/Business/user.module';
 import { PhotoModule } from 'src/Domains/photo/Busines/photo.module';
 import { FileModule } from 'src/Domains/file/Busines/file.module';
 import { AssignmentModule } from 'src/Domains/assignment/Business/assignment.module';
-import { CourseModule } from './course/course.module';
-import { ContractorModule } from 'src/Domains/contractor/Business/marathon.module';
-import { CategoryModule } from './category/category.module';
-import { TagModule } from './tag/tag.module';
-import { AuthModule } from './auth/auth.module';
+import { ContractorModule } from 'src/Domains/contractor/Business/contractor.module';
+import { CategoryModule } from 'src/Domains/category/Business/category.module';
+import { TagModule } from 'src/Domains/tag/Business/tag.module';
+import { AuthModule } from 'src/Domains/auth/auth.module';
+import { ServiceModule } from 'src/Domains/service/Business/service.module';
 import dbConfiguration from "../configs/orm.config";
 
 @Module({
@@ -31,7 +31,7 @@ import dbConfiguration from "../configs/orm.config";
     PhotoModule,
     FileModule,
     AssignmentModule,
-    CourseModule,
+    ServiceModule,
     ContractorModule,
     CategoryModule,
     TagModule,

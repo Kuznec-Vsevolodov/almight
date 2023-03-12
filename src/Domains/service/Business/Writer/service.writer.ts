@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { FileService, FileType } from 'src/Domains/file/Busines/file.service';
-import { User } from 'src/entities/user.entity';
+import { User } from 'src/Domains/user/Infrastructure/Models/user.entity';
 import { ServiceDto } from '../Dto/service.dto';
-import { CategoryDto, CreateServiceDto, TagDto } from '../../Presentation/Dto/create-course.dto';
+import { CategoryDto, CreateServiceDto, TagDto } from '../../Presentation/Dto/create-service.dto';
 import { ServiceRepository } from '../../Infrastructure/Repository/service.repository';
 import { Photo } from 'src/Domains/photo/Infrastructure/Models/photo.entity';
 import { ServiceCategory } from '../../Infrastructure/Models/service_category.entity';
 import { ServiceReader } from '../Reader/service.reader';
 import { ServiceTag } from '../../Infrastructure/Models/Service_tag.entity';
+import { UserService } from 'src/Domains/user/Business/user.service';
 
 @Injectable()
 export class ServiceWriter {
@@ -15,13 +16,14 @@ export class ServiceWriter {
     constructor(
         private fileService: FileService,
         private serviceRepository: ServiceRepository,
-        private serviceReader: ServiceReader
+        private serviceReader: ServiceReader,
+        private userService: UserService
     ) { }
 
     public async create(presentationDto: CreateServiceDto, preview_photo) {
         const service = new ServiceDto();
 
-        service.author = await User.findOne({ where: { id: presentationDto.author} });
+        service.author = await this.userService.getById(presentationDto.author)
         service.name = presentationDto.name;
         service.description = presentationDto.description;
         service.price = presentationDto.price;

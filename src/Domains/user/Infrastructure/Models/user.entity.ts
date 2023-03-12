@@ -1,10 +1,10 @@
 import { IsEmail, IsString, MinLength } from 'class-validator';
 import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm';
 import { BaseEntity } from 'src/Shared/BaseEntity/baseEntity';
-import { Service } from '../Domains/service/Infrastructure/Models/service.entity';
-import { Assignment } from './assignment.entity';
-import { Contractor } from '../Domains/contractor/Infrastructure/Models/contractor.entity';
-import { Rating } from './rating.entity';
+import { Service } from '../../../service/Infrastructure/Models/service.entity';
+import { Assignment } from 'src/Domains/assignment/Infrastructure/Models/assignment.entity';
+import { Contractor } from '../../../contractor/Infrastructure/Models/contractor.entity';
+import { Rating } from '../../../../entities/rating.entity';
 
 export enum UserRole {
     CLIENT = "client",
